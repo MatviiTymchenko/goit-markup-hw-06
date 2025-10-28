@@ -288,6 +288,10 @@ img {
   letter-spacing: 0.02em;
   color: #2e2f42;
 }
+.mobile-contacts-link.current,
+.mobile-nav-link.current {
+  color: #404bbf;
+}
 .mobile-contacts-link {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
@@ -343,6 +347,10 @@ img {
   .mobile-menu {
     display: none;
   }
+
+  .contacts-list {
+    gap: 12px;
+  }
 }
 
 /* section main */
@@ -352,16 +360,68 @@ img {
   padding: 72px 0;
   margin: 0 auto;
   text-align: center;
-  max-width: 320px;
+  width: 100%;
   background-size: cover;
   background-image: linear-gradient(
       rgba(46, 47, 66, 0.7),
       rgba(46, 47, 66, 0.7)
     ),
-    url("../images/bg.jpg");
+    url("../images/bg-m.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   overflow: hidden;
+}
+
+@media (min-resolution: 192dpi) {
+  .main-section {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url("../images/bg-m@2x.jpg");
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .main-section {
+    padding: 122px 0;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url("../images/bg-t.jpg");
+  }
+}
+
+@media (min-resolution: 192dpi) and (min-width: 768px) {
+  .main-section {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url("../images/bg-t@2x.jpg");
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .main-section {
+    padding: 188px 0;
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url("../images/bg-1.jpg");
+  }
+}
+
+@media (min-resolution: 192dpi) and (min-width: 1158px) {
+  .main-section {
+    background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7),
+        rgba(46, 47, 66, 0.7)
+      ),
+      url("../images/bg-2x.jpg");
+  }
 }
 .tittle {
   font-weight: 700;
@@ -406,6 +466,7 @@ img {
     padding: 112px 0;
     position: relative;
   }
+
   .tittle {
     max-width: 496px;
     font-size: 56px;
@@ -419,6 +480,7 @@ img {
     padding: 188px 0;
     position: relative;
   }
+
   .tittle {
     max-width: 496px;
     font-size: 56px;
@@ -429,6 +491,7 @@ img {
 /* values section */
 .values-bg {
   visibility: hidden;
+  display: none;
 }
 .values-section {
   padding: 96px 0;
@@ -439,7 +502,7 @@ img {
   gap: 72px;
 }
 .values-info {
-  font-weight: 500;
+  font-weight: 700;
   font-size: 36px;
   line-height: 1.1;
   letter-spacing: 0.02em;
@@ -456,7 +519,7 @@ img {
 }
 @media screen and (min-width: 768px) {
   .values-items {
-    width: calc((100% - 48px) / 2);
+    width: calc((100% - 24px) / 2);
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -464,6 +527,7 @@ img {
   }
   .values-list {
     gap: 24px;
+    row-gap: 72px;
   }
   .values-info {
     display: block;
@@ -513,6 +577,9 @@ img {
     line-height: 1.2;
     letter-spacing: 0.02em;
   }
+  .values-text {
+    font-weight: 400;
+  }
 }
 /* team section */
 .page-tittle {
@@ -561,6 +628,7 @@ img {
 .team-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 72px;
 }
 .team-items {
@@ -594,6 +662,7 @@ img {
 @media screen and (min-width: 768px) {
   .team-list {
     justify-content: center;
+    column-gap: 24px;
   }
 }
 @media screen and (min-width: 1158px) {
@@ -673,7 +742,8 @@ img {
   .portfolio-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 72px 24px;
+    row-gap: 72px;
+    column-gap: 24px;
   }
   .portfolio-items {
     width: calc((100% - 24px) / 2);
@@ -683,6 +753,12 @@ img {
   }
 }
 @media screen and (min-width: 1158px) {
+  .portfolio-list {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 40px;
+    column-gap: 24px;
+  }
   .portfolio-section {
     padding: 120px 0;
   }
@@ -742,8 +818,6 @@ img {
 .page-footer {
   background-color: #2e2f42;
   padding: 96px 0;
-  display: flex;
-  flex-wrap: wrap;
 }
 .footer-container {
   display: flex;
@@ -860,24 +934,17 @@ img {
 }
 .footer-social-wrapper {
   width: 100%;
-  max-width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin: 0 auto;
-  padding: 0;
 }
 @media screen and (min-width: 768px) {
-  .page-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 96px 32px;
+  .footer-container {
+    padding: 0 108px;
     gap: 24px;
-    flex-wrap: wrap;
+    align-items: baseline;
   }
+  .footer-social-text {
+    text-align: left;
+  }
+
   .footer-form {
     display: flex;
     flex-direction: row;
@@ -929,7 +996,6 @@ img {
   }
   .page-footer {
     padding: 100px 0;
-    flex-wrap: nowrap;
   }
   .footer-logo {
     display: inline-block;
@@ -938,13 +1004,15 @@ img {
     display: flex;
     align-items: baseline;
     flex-wrap: nowrap;
+    padding: 0 15px;
+    gap: 0;
   }
   .footer-social-text {
     text-align: initial;
   }
   .footer-wrapper {
     display: flex;
-
+    margin-right: 120px;
     width: 264px;
   }
   .team-footer-social {
@@ -963,6 +1031,7 @@ img {
     flex-wrap: nowrap;
     flex-direction: column;
     justify-content: baseline;
+    margin-left: 80px;
   }
   .footer-button:hover,
   .footer-button:focus {
@@ -974,6 +1043,9 @@ img {
   }
   .footer-input-field {
     width: 264px;
+  }
+  .footer-social-wrapper {
+    margin-right: auto;
   }
 }
 /* modal window */
@@ -1143,7 +1215,7 @@ input[type="checkbox"]:checked + .agreement-wrapper .agreement-checkbox {
   color: rgba(46, 47, 66, 0.4);
 }
 .agreement-checkbox {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   fill: transparent;
@@ -1177,6 +1249,8 @@ input[type="checkbox"]:checked + .agreement-wrapper .agreement-checkbox {
   justify-content: center;
   align-items: center;
   fill: transparent;
+  display: flex;
+  align-items: center;
 
   font-weight: 400;
   font-size: 12px;
@@ -1217,6 +1291,7 @@ input[type="checkbox"]:checked + .agreement-wrapper .agreement-checkbox {
   .modal {
     width: 408px;
     min-height: 584px;
+    padding: 72px 24px 24px;
   }
   .modal-textarea-input {
     width: 360px;
@@ -1233,6 +1308,7 @@ input[type="checkbox"]:checked + .agreement-wrapper .agreement-checkbox {
   .modal {
     width: 408px;
     min-height: 584px;
+    padding: 72px 24px 24px;
   }
   .modal-close-button:hover,
   .modal-close-button:focus {
