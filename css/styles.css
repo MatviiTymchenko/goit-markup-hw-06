@@ -337,6 +337,13 @@ img {
     display: none;
   }
 }
+.mobile-nav-link:hover,
+.mobile-contacts-link:hover,
+.mobile-nav-link:focus,
+.mobile-contacts-link:focus {
+  color: #404bbf;
+}
+
 /* section main */
 
 .main-section {
