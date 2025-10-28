@@ -478,7 +478,7 @@ button {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-input-field::placeholder {
-   color #ffffff; 
+  color: #fff;
 }
 .footer-input-field:focus {
   border-color: #4d5ae5;
@@ -555,13 +555,12 @@ button {
   transform: translate(-50%, -50%) scale(1.5);
 }
 .modal-close-svg {
- transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-form-wrapper {
   position: relative;
- 
 }
-.modal-textarea-field{
+.modal-textarea-field {
   margin-bottom: 16px;
 }
 .modal-close-button {
@@ -710,7 +709,6 @@ input[type="checkbox"]:checked + .agreement-wrapper .agreement-checkbox {
   color: #4d5ae5;
 }
 .agreement-wrapper {
- 
   justify-content: center;
   align-items: center;
   fill: transparent;
