@@ -223,6 +223,7 @@ img {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  z-index: 1;
 }
 .mobile-close-button {
   position: absolute;
@@ -299,7 +300,7 @@ img {
 
 .mobile-contacts {
   font-style: normal;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
 }
 .mobile-social-wrapper {
   width: 100%;
@@ -332,16 +333,16 @@ img {
   flex-direction: column;
   gap: 24px;
 }
-@media screen and (min-width: 768px) {
-  .mobile-menu {
-    display: none;
-  }
-}
 .mobile-nav-link:hover,
 .mobile-contacts-link:hover,
 .mobile-nav-link:focus,
 .mobile-contacts-link:focus {
   color: #404bbf;
+}
+@media screen and (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
 }
 
 /* section main */
